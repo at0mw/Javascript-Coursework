@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<!-- File: index.html
+Created: 01-10-2019
+Description: introductory page-->
+<head>
+<script>
+var dice = [11,12,15,16,1,13];
+var g;
+var RunisValid = true;
+var N = 5;
+function playstage() {
+
+    sortDice();
+    judge();
+    document.getElementById("dicesum").innerHTML = g;
+
+}
+
+function addition(total, num) {
+  return total + num;
+}
+
+function sortDice() {
+  dice.sort(function(a, b){return a-b});
+}
+
+function judge() {
+  //sums the value of the scores each round and makes it equal to g
+  document.getElementById("rest").innerHTML = dice;
+  g = dice.reduce(addition);
+  var isOk = true; // Set to true initially
+
+  if (dice.every(allDifferent)){
+    return g;
+  }
+  else {
+    return g = 0;
+  }
+}
+
+
+function run(el,i,arr) {
+  var f = 1;
+  if (i === 0){
+    return true;
+  }
+  else {
+    return (dice[i] === dice[i - 1]+ f);
+  }
+}
+
+
+
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="gamestyle.css">
+
+<title>Tom Williams: Assignment 2</title>
+
+<meta charset="utf-8">
+<meta name="author" content="Tom Williams">
+<meta name="description" content="Dice game page">
+<meta name="keywords" content="dice, game, chance">
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+
+</head>
+<body style="font-family: ’Roboto Mono’, monospace;">
+
+<article>
+<h1 class="heading">Dice Game</h1>
+<button type="button" onclick="playstage()">Judge</button>
+
+<p id="dicesum"></p>
+  <p id="rest"></p>
+
+</article>
+<footer>
+<!--#flastmod file="index.html" -->
+</footer>

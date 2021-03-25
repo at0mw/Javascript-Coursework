@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en-GB">
+<!-- File: index.html
+Created: 01-10-2019
+Description: introductory page-->
+<head>
+<script src="game.js"></script>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="gamestyle.css">
+
+<title>Tom Williams: Assignment 2</title>
+
+<meta charset="utf-8">
+<meta name="author" content="Tom Williams">
+<meta name="description" content="Dice game page">
+<meta name="keywords" content="dice, game, chance">
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+
+</head>
+<body style="font-family: ’Roboto Mono’, monospace;">
+
+<article>
+<h1 class="heading">Dice Game</h1>
+
+<div id="hideinput">
+  </br>
+  <p> Choose between 3 and 6 dice.</p>
+  <input id="dicenum" type="number" placeholder="enter your dice number here">
+  <button type="button" onclick="input()">Submit</button>
+  <p id="wrong"></p>
+</div>
+
+<div id="hideplaystage" style="display:none">
+  </br>
+  <button type="button" onclick="playstage()">Roll Dice</button>
+  <button type="button" onclick="endgame()">End Game</button>
+  <p id="input"></p>
+
+  <h2 id="chosennumber"></h2>
+
+  <div class="flexbox">
+    <div class="dice" id="dice0"></div>
+    <div class="dice" id="dice1"></div>
+    <div class="dice" id="dice2"></div>
+  </div>
+
+  <div class="flexbox">
+    <div class="dice" id="dice3"></div>
+    <div class="dice" id="dice4"></div>
+    <div class="dice" id="dice5"></div>
+  </div>
+</div>
+
+  <div id="scorecard" style="Display:none">
+    <h2 id="roundscorecard"></h2>
+    <p>The current round score:</p><p id="dicesum"></p>
+    <p id="sumroundscore"><p id="cumulativescore"></p></p>
+    <p>The average score per round is:</p><p id="averagescore"></p>
+  </div>
+
+<div id="hideendgame" style="display:none">
+<button type="button" onclick="reset()">Restart</button>
+</div>
+
+</article>
+<footer>
+<!--#flastmod file="index.html" -->
+</footer>
+</body>
+</html>
